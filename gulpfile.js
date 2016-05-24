@@ -97,7 +97,7 @@ gulp.task('webserver', function() {
 
 gulp.task('livereload', function() {
     gulp.src(['dist/**/*.*'])
-        .pipe(watch(['dist/**/*.*']))
+        .pipe(watch(['dist/**/*.*', 'src/css/*.*']))
         .pipe(connect.reload());
 });
 
