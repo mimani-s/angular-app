@@ -10,5 +10,10 @@ angular.module('AngularApp').config(['$stateProvider', '$urlRouterProvider',
         $urlRouterProvider.otherwise('/');
 
         // Application routes
+        $stateProvider
+            .state('index', {
+                url: '/',
+                templateUrl: 'templates/contacts-list.html'
+            });
     }
 ]);
