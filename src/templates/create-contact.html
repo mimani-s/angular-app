@@ -7,15 +7,19 @@
         </div>
         <div class="form-group">
             <label for="lastName">Last Name:</label>
-            <input type="text" class="form-control" ng-model="contact.lastName" id="lastName">
+            <input type="text" class="form-control" required="true" ng-model="contact.lastName" id="lastName" name="lastName">
+            <span role="alert" class="error" ng-show="createContactForm.lastName.$dirty && createContactForm.lastName.$error.required"> lastName is Required</span>
         </div>
         <div class="form-group">
             <label for="phone">Phome:</label>
-            <input type="number" class="form-control" ng-model="contact.phone" id="phone">
+            <input type="number" class="form-control" required="true" ng-model="contact.phone" id="phone" name="phone">
+            <span role="alert" class="error" ng-show="createContactForm.phone.$dirty && createContactForm.phone.$error.required"> phone No is Required</span>
         </div>
         <div class="form-group">
             <label for="email">Email:</label>
-            <input type="email" class="form-control" ng-model="contact.email" id="email">
+            <input type="email" class="form-control" required="true" ng-model="contact.email" id="email" name="email">
+            <span role="alert" class="error" ng-show="createContactForm.email.$dirty && createContactForm.email.$error.email"> Email is Invalid</span>
+            <span role="alert" class="error" ng-show="createContactForm.email.$dirty && createContactForm.email.$error.required"> Emailis Required</span>
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
     </form>
