@@ -17,7 +17,9 @@ angular.module('AngularApp').config(['$stateProvider', '$urlRouterProvider',
             })
             .state('createContact', {
                 url: '/contacts/new',
-                templateUrl: 'templates/create-contact.html'
+                templateUrl: 'templates/create-contact.html',
+                controller: 'CreateContactsCtrl',
+                controllerAs: 'ctrl'
             });
     }
 ]);

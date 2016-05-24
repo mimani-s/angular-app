@@ -28,4 +28,8 @@ function ContactsModel() {
     service.getContacts = function () {
         return contacts;
     };
+
+    service.addToContacts = function (contact) {
+        contacts.push(contact);
+    };
 };
