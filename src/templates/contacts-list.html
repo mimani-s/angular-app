@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" ng-controller="ContactsListCtrl">
     <div class="col-lg-6">
         <table class="table">
             <thead class="contact-thead">
@@ -11,26 +11,12 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Saurabh</td>
-                <td>Mimani</td>
-                <td>9343459079</td>
-                <td>saurabh.mimani@flipkart.com</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Pradhuman</td>
-                <td>jhala</td>
-                <td>9342345894</td>
-                <td>pradhuman@flipkart.com</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Suresh</td>
-                <td>Kumar</td>
-                <td>9234589432</td>
-                <td>suresh@flipkart.com</td>
+            <tr ng-repeat="contact in contacts">
+                <th scope="row">{{$index + 1}}</th>
+                <td>{{contact.firstName}}</td>
+                <td>{{contact.lastName}}</td>
+                <td>{{contact.phone}}</td>
+                <td>{{contact.email}}</td>
             </tr>
             </tbody>
         </table>
