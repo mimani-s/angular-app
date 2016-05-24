@@ -3,9 +3,9 @@
  */
 
 angular.module('AngularApp')
-    .controller('CreateContactsCtrl', ['$scope', 'ContactsModel', CreateContactsCtrl]);
+    .controller('CreateContactsCtrl', ['$scope', 'ContactsModel','$location', '$state', CreateContactsCtrl]);
 
-function CreateContactsCtrl($scope, ContactsModel) {
+function CreateContactsCtrl($scope, ContactsModel, $location, $state) {
 
     var self = this;
 
@@ -15,6 +15,9 @@ function CreateContactsCtrl($scope, ContactsModel) {
 
     self.createContact = function(){
         $scope.contacts = ContactsModel.addToContacts($scope.contact);
+        //$location.path('/');
+        //You can pass params as well
+        $state.go('index', { });
     }
 
 }
