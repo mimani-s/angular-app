@@ -21,6 +21,11 @@
             <span role="alert" class="error" ng-show="createContactForm.email.$dirty && createContactForm.email.$error.email"> Email is Invalid</span>
             <span role="alert" class="error" ng-show="createContactForm.email.$dirty && createContactForm.email.$error.required"> Emailis Required</span>
         </div>
+        <div class="form-group">
+            <label for="url">URL:</label>
+            <input prepend-http type="url" class="form-control" required="true" ng-model="contact.url" id="url" name="url">
+            <span role="alert" class="error" ng-show="createContactForm.url.$dirty && createContactForm.url.$error.required"> url is  Required</span>
+        </div>
         <button type="submit" class="btn btn-default">Submit</button>
     </form>
 </div>
