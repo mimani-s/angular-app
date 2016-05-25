@@ -3,12 +3,16 @@
  */
 
 angular.module('AngularApp')
-    .controller('ContactsListCtrl', ['$scope', 'ContactsModel', ContactsListCtrl]);
+    .controller('ContactsListCtrl', ['$scope', '$rootScope', 'ContactsModel', ContactsListCtrl]);
 
-function ContactsListCtrl($scope, ContactsModel) {
+function ContactsListCtrl($scope, $rootScope, ContactsModel) {
 
     $scope.initialize = function(){
         $scope.contacts = ContactsModel.getContacts();
+    }
+
+    $scope.selectContact = function(contact){
+        $rootScope.contact = contact;
     }
 
 }
