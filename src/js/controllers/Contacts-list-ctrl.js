@@ -9,6 +9,7 @@ function ContactsListCtrl($scope, $rootScope, ContactsModel) {
 
     $scope.initialize = function(){
         $scope.contacts = ContactsModel.getContacts();
+        $scope.search = {};
     }
 
     $scope.selectContact = function(contact){

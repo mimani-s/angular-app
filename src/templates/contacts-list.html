@@ -1,5 +1,8 @@
 <div class="row" ng-controller="ContactsListCtrl" ng-init="initialize()">
     <div class="col-lg-6">
+        Search by Name: <input type="text" ng-model="search.firstName">
+        <br>
+        <br>
         <table class="table">
             <thead class="contact-thead">
             <tr>
@@ -11,7 +14,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="contact in contacts" ng-click="selectContact(contact)" class="selected-tr">
+            <tr ng-repeat="contact in contacts | filter:{ firstName: search.firstName }" ng-click="selectContact(contact)" class="selected-tr">
                 <th scope="row">{{$index + 1}}</th>
                 <td>{{contact.firstName}}</td>
                 <td>{{contact.lastName}}</td>
