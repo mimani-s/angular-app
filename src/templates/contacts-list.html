@@ -22,9 +22,10 @@
             <tbody>
             <tr ng-repeat="contact in contacts | filter:{ firstName: search.firstName }  | orderBy: search.orderBy"
                 ng-click="selectContact(contact)"
-                ng-include src="'/templates/contact.html'"
+                app-contact="contact"
                 class="selected-tr">
             </tr>
+
             </tbody>
         </table>
     </div>
