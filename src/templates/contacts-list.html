@@ -20,12 +20,10 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="contact in contacts | filter:{ firstName: search.firstName }  | orderBy: search.orderBy" ng-click="selectContact(contact)" class="selected-tr">
-                <th scope="row">{{$index + 1}}</th>
-                <td>{{contact.firstName}}</td>
-                <td>{{contact.lastName}}</td>
-                <td>{{contact.phone}}</td>
-                <td>{{contact.email}}</td>
+            <tr ng-repeat="contact in contacts | filter:{ firstName: search.firstName }  | orderBy: search.orderBy"
+                ng-click="selectContact(contact)"
+                ng-include src="'/templates/contact.html'"
+                class="selected-tr">
             </tr>
             </tbody>
         </table>
